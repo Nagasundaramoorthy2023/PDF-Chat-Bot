@@ -17,12 +17,8 @@ from langchain_core.runnables.history import RunnableWithMessageHistory
 
 load_dotenv()
 
-os.environ['HF_API_KEY'] = os.getenv("HF_API_KEY")
+os.environ['hf_api_key'] = os.getenv("hf_api_key")
 embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
-
-os.environ['LANGCHAIN_API_KEY'] = os.getenv("LANGCHAIN_API_KEY")
-os.environ['LANGCHAIN_TRACING_V2'] = "true"
-os.environ['LANGCHAIN_PROJECT'] = "RAG Document Q&A"
 
 ## Set up streamlit
 
