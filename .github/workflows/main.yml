@@ -1,0 +1,18 @@
+name: CI Pipeline
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Run script with multiple API keys
+      run: |
+        echo "API Key 1: ${{ secrets.GEMINI_KEY }}"
+        echo "API Key 2: ${{ secrets.GROQ_API_KEY }}"
+        echo "API Key 3: ${{ secrets.HF_API_KEY }}"
+        echo "API Key 4: ${{ secrets.LANGCHAIN_API_KEY }}"
